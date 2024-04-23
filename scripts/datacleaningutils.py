@@ -21,20 +21,21 @@ class datacleaning:
         if current_window:
             missing_windows.append(current_window)
 
-        # Calculate the number of intervals spanned by each missing window
-        intervals_spanned = [len(window) for window in missing_windows]
+        if missing_windows != []:
+            # Calculate the number of intervals spanned by each missing window
+            intervals_spanned = [len(window) for window in missing_windows]
 
-        # Print the results
-        pt = 0
-        print("Windows of missing data:")
-        for window in missing_windows:
-            # print(window)
-            if len(window) == 1:
-                pt += 1
-        print(f"Number of windows of missing data {len(missing_windows)}")
-        # print("Number of intervals spanned by each missing window:", intervals_spanned)
-        print("longest window of missing data:", len(intervals_spanned))
-        print(f"Point missing data {pt}")
+            # Print the results
+            pt = 0
+            print("Windows of missing data:")
+            for window in missing_windows:
+                # print(window)
+                if len(window) == 1:
+                    pt += 1
+            print(f"Number of windows of missing data {len(missing_windows)}")
+            # print("Number of intervals spanned by each missing window:", intervals_spanned)
+            print("longest window of missing data:", len(intervals_spanned))
+            print(f"Point missing data {pt}")
 
     # putting it all together
     def fill_missing_from_other_datasets(self, df, column_name, df_array, threshhold):
