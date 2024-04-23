@@ -3,7 +3,7 @@
 ## About
 This Mini-Project aims to analyse the PRSA dataset on Multi-State Air Quality in Beijing in an effort to build a solution to manage symptoms of poor air quality. Below is a flowchart of the reccomended path to look at our project.
 
-<img src="img/file_distribution.drawio (2).png"></img>
+<img src="img/flow_of_events.drawio.png"></img>
 
 In order to make the notebook easier to follow, we have
 1. **Abstracted data imputation** codes into a **datacleaning.py**
