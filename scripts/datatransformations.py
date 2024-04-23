@@ -23,9 +23,9 @@ class datatransformation:
         self.lambda_ = lambda_
         return transformed_data, lambda_
 
-    def inverse_yeojohnson_transform_column(self, transformed_data, lambda_ = None):
+    def inverse_yeojohnson_transform_column(self, transformed_data, column = "PM2.5", lambda_ = None):
         if lambda_ == None:
-            lambda_ = self.lambda_
+            lambda_ = self.lambda_[column]
         # Perform inverse Ye-Johnson transformation
         if lambda_ == 0:
             return np.exp(transformed_data) - 1

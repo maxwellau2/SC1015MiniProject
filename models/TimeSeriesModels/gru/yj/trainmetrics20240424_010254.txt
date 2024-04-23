@@ -1,0 +1,5 @@
+Training Data Metrics for PM2.5:
+Mean Absolute Error (MAE): 0.3445741596948532
+Mean Squared Error (MSE): 0.2050224542536327
+Mean Absolute Percent Error (MAPE): 0.07909365907545171
+Explainable Variance (R^2): 0.9246736700054166

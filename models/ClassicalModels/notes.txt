@@ -1,0 +1,46 @@
+========Fitting LinearRegression Model========
+========Fitting RandomForestRegressor Model========
+========Fitting AdaBoostRegressor Model========
+========Fitting MLPRegressor Model========
+C:\Coding\SC1015DSAI\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py:691: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (500) reached and the optimization hasn't converged yet.
+  warnings.warn(
+Best Model : MLPRegressor og
+Best Model Train Mean Squared Error: 610.6325985474108
+Best Model Validation Mean Squared Error: 668.2201569091941
+Best Model Validation R-squared: 0.9035429457902581
+Best Model Test Mean Squared Error: 586.6345361175032
+Best Model Test R-squared: 0.9084465978644134
+========Fitting LinearRegression Model========
+========Fitting RandomForestRegressor Model========
+========Fitting AdaBoostRegressor Model========
+========Fitting MLPRegressor Model========
+Best Model : RandomForestRegressor yj
+Best Model Train Mean Squared Error: 0.2904083800584746
+Best Model Validation Mean Squared Error: 0.3278615532114417
+Best Model Validation R-squared: 0.8786838927231109
+Best Model Test Mean Squared Error: 0.3128916870082338
+Best Model Test R-squared: 0.8840018151146404
+========Fitting LinearRegression Model========
+========Fitting RandomForestRegressor Model========
+========Fitting AdaBoostRegressor Model========
+========Fitting MLPRegressor Model========
+Best Model : RandomForestRegressor sqrt
+Best Model Train Mean Squared Error: 1.6734934234475405
+Best Model Validation Mean Squared Error: 1.8895909815432412
+Best Model Validation R-squared: 0.8889548905195951
+Best Model Test Mean Squared Error: 1.775448431898572
+Best Model Test R-squared: 0.8919094316753489
+========Fitting LinearRegression Model========
+========Fitting RandomForestRegressor Model========
+========Fitting AdaBoostRegressor Model========
+========Fitting MLPRegressor Model========
+Best Model : RandomForestRegressor log
+Best Model Train Mean Squared Error: 0.12019344525233543
+Best Model Validation Mean Squared Error: 0.1338333578604169
+Best Model Validation R-squared: 0.8746190628101476
+Best Model Test Mean Squared Error: 0.12952011904362404
+Best Model Test R-squared: 0.8796126762202954
+
+
+// non- normalised data took around 2 minutes to train, and yet SGD did not converge, is it due to the skew?
+// 

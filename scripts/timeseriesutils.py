@@ -3,7 +3,7 @@ import pandas as pd
 import tensorflow as tf
 from sklearn.metrics import mean_absolute_error, mean_squared_error, mean_absolute_percentage_error, r2_score
 import plotly.graph_objects as go
-from datatransformations import datatransformation
+from .datatransformations import datatransformation
 
 class tsUtils:
     def __init__(self):
@@ -110,7 +110,7 @@ class tsUtils:
         return model
 
     
-    def print_metrics_and_plot(self,model, x_ts, y_ts, file_name, transformation = None):
+    def print_metrics_and_plot(self,model, x_ts, y_ts, file_name, transformation = None, output = True):
         trans = datatransformation()
         predicted = model.predict(x_ts)
         # extract PM2.5 values
@@ -124,13 +124,20 @@ class tsUtils:
         mape = mean_absolute_percentage_error(actual_pm25, predicted_pm25)
         r2 = r2_score(actual_pm25, predicted_pm25)
 
-        # save evaluation metrics for PM2.5
-        with open(file_name, "a") as f:
-            print("Training Data Metrics for PM2.5:", file=f)
-            print("Mean Absolute Error (MAE):", mae, file=f)
-            print("Mean Squared Error (MSE):", mse, file=f)
-            print("Mean Absolute Percent Error (MAPE):", mape, file=f)
-            print("Explainable Variance (R^2):", r2, file=f)
+        if output:
+            # save evaluation metrics for PM2.5
+            with open(file_name, "a") as f:
+                print("Training Data Metrics for PM2.5:", file=f)
+                print("Mean Absolute Error (MAE):", mae, file=f)
+                print("Mean Squared Error (MSE):", mse, file=f)
+                print("Mean Absolute Percent Error (MAPE):", mape, file=f)
+                print("Explainable Variance (R^2):", r2, file=f)
+        else:
+            print("Training Data Metrics for PM2.5:")
+            print("Mean Absolute Error (MAE):", mae )
+            print("Mean Squared Error (MSE):", mse)
+            print("Mean Absolute Percent Error (MAPE):", mape)
+            print("Explainable Variance (R^2):", r2)
             
         # plot the predicted values for PM2.5
         print(predicted_pm25.shape, actual_pm25.shape)
@@ -138,8 +145,8 @@ class tsUtils:
             predicted_pm25 = trans.inverse_log_transform_column(predicted_pm25.flatten())
             actual_pm25 = trans.inverse_log_transform_column(actual_pm25.flatten())
         if transformation == "yj":
-            predicted_pm25 = trans.inverse_yeojohnson_transform_column(predicted_pm25.flatten())
-            actual_pm25 = trans.inverse_yeojohnson_transform_column(actual_pm25.flatten())
+            predicted_pm25 = trans.inverse_yeojohnson_transform_column(predicted_pm25.flatten(), column="PM2.5")
+            actual_pm25 = trans.inverse_yeojohnson_transform_column(actual_pm25.flatten(), column="PM2.5")
         if transformation == "sqrt":
             predicted_pm25 = trans.sqr_transform_column(predicted_pm25.flatten())
             actual_pm25 = trans.sqr_transform_column(actual_pm25.flatten())

@@ -1,0 +1,7 @@
+Train Mean Squared Error: 0.35075586344196497
+Train R-squared: 0.8724140533527378
+Validation Mean Squared Error: 0.36353655548953145
+Validation R-squared: 0.8654833440125982
+Test Mean Squared Error: 0.3476277858649034
+Test R-squared: 0.871124117864518
+

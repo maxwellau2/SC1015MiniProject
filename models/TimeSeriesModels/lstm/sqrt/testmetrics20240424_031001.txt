@@ -1,0 +1,5 @@
+Test Data Metrics for PM2.5:
+Mean Absolute Error (MAE): 0.7727916923031638
+Mean Squared Error (MSE): 1.1571278163324876
+Mean Absolute Percent Error (MAPE): 0.10535794411760792
+Explainable Variance (R^2): 0.9342654578079758
