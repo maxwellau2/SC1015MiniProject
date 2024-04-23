@@ -9,25 +9,7 @@ class tsUtils:
     def __init__(self):
         pass
 
-    def generate_time_series(self, data, window_size = 10):
-        # generate time series
-        time_series_data = []
-        # Iterate over the DataFrame and generate time series data with the specified window size
-        for i in range(len(data) - window_size + 1):
-            window_data = data.iloc[i:i+window_size]  # extract data for the current window
-            time_series_data.append(window_data.values)  # append the window data to the list
-        # convert the list to a numpy array
-        time_series_data = np.array(time_series_data)
-        print("Shape of time series data:", time_series_data.shape)
-        return time_series_data
-    
-    def generate_target(self, data, columns, window_size = 10, shift_factor = -1):
-        next_day_data = data.shift(shift_factor).dropna()  # shift up by 1
-        # Extract the target values (next day's values)
-        target_values = next_day_data[columns].values
-        return target_values
-    
-    def generate_time_series_2(self, res, window_size=10):
+    def generate_time_series(self, res, window_size=10):
         time_series_data = []
         targets = []
 
@@ -128,21 +110,21 @@ class tsUtils:
         return model
 
     
-    def print_metrics_and_plot(self,model, x_ts, y_ts, file_name):
+    def print_metrics_and_plot(self,model, x_ts, y_ts, file_name, transformation = None):
         trans = datatransformation()
         predicted = model.predict(x_ts)
-        # Extract PM2.5 values
+        # extract PM2.5 values
 
         predicted_pm25 = np.array(predicted[:, -1])
         actual_pm25 = np.array(y_ts[:, -1])
         
-        # Calculate evaluation metrics for PM2.5
+        # evaluation metrics for PM2.5
         mae = mean_absolute_error(actual_pm25, predicted_pm25)
         mse = mean_squared_error(actual_pm25, predicted_pm25)
         mape = mean_absolute_percentage_error(actual_pm25, predicted_pm25)
         r2 = r2_score(actual_pm25, predicted_pm25)
 
-        # Print evaluation metrics for PM2.5
+        # save evaluation metrics for PM2.5
         with open(file_name, "a") as f:
             print("Training Data Metrics for PM2.5:", file=f)
             print("Mean Absolute Error (MAE):", mae, file=f)
@@ -150,10 +132,21 @@ class tsUtils:
             print("Mean Absolute Percent Error (MAPE):", mape, file=f)
             print("Explainable Variance (R^2):", r2, file=f)
             
-        # Plot the predicted values for PM2.5
+        # plot the predicted values for PM2.5
         print(predicted_pm25.shape, actual_pm25.shape)
-        predicted_pm25 = trans.sqr_transform_column(predicted_pm25.flatten())
-        actual_pm25 = trans.sqr_transform_column(actual_pm25.flatten())
+        if transformation == "log":
+            predicted_pm25 = trans.inverse_log_transform_column(predicted_pm25.flatten())
+            actual_pm25 = trans.inverse_log_transform_column(actual_pm25.flatten())
+        if transformation == "yj":
+            predicted_pm25 = trans.inverse_yeojohnson_transform_column(predicted_pm25.flatten())
+            actual_pm25 = trans.inverse_yeojohnson_transform_column(actual_pm25.flatten())
+        if transformation == "sqrt":
+            predicted_pm25 = trans.sqr_transform_column(predicted_pm25.flatten())
+            actual_pm25 = trans.sqr_transform_column(actual_pm25.flatten())
+        else:
+            predicted_pm25 = predicted_pm25.flatten()
+            actual_pm25 = actual_pm25.flatten()
+        
         fig = go.Figure()
         fig.add_trace(go.Scatter(y=predicted_pm25, name="Predicted PM2.5"))
         fig.add_trace(go.Scatter(y=actual_pm25, name="Actual PM2.5"))
