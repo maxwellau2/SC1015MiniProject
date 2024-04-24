@@ -9,24 +9,32 @@ Below is a flowchart of the reccomended path to look at our project.
 <img src="img/flow_of_events.drawio.png"></img>
 
 In order to make the notebook easier to follow, we have
-1. **Abstracted data imputation** codes into a **datacleaning.py**
-2. **Abstracted data transformation** functions into **datatransformations.py**
-3. Abstracted the cycle shown above (Feature Engineering, Data Preparation, Model Training, Model Evaluation) into a single notebook **showing only evalutation steps** (models will be trained seperately to reduce code redundancy in the notebook).
+1. **Abstracted data imputation** codes into a **<a href="./scripts/datacleaningutils.py">datacleaningutils.py</a>**
+2. **Abstracted data transformation** functions into **<a href="./scripts/datatrainformations.py">datatrainformations.py</a>**
+3. **Abstracted Regression Modelling Processes** into **<a href="./scripts/classical_models.py">classical_models.py</a>**
+4. **Abstracted Time Series Modelling Processes** into **<a href="./scripts/timeseries_trainer.py">timeseries_trainer.py</a>**
+5. Abstracted the cycle shown above (Data Preparation, Model Training, Model Evaluation) into a single notebook **showing only evalutation steps** (models will be trained seperately to reduce code redundancy in the notebook).
 
-**All abstractions are available to read in ./scripts**
+This is in an effort to reduce the size of the notebook to make it easier to follow **(No one wants to read a monolith that is difficult to read, do they?)**. We will add the general ideas of what each function does as markdown cells.
 
-This is in an effort to reduce the size of the notebook to make it easier to follow **(No one wants to read a monolith that is difficult to read, do they?)**. We wil add the general ideas of what each function does as markdown cells.
+### Reading Order
+1. <a href="./businessproposition.md">Business Proposition</a>
+2. <a href="./data_imputation.ipynb">Data Imputation</a>
+3. <a href="./EDA.ipynb">Exploratory Data Analysis</a>
+4. <a href="./feature_engineering.ipynb">Feature Engineering</a>
+5. <a href="./model_eval.ipynb">Model Evaluation</a>
+6. <a href="./productdesign.md">Product Design</a>
 
 ## Dataset
 
 This dataset contains hourly records of air pollutant levels from 12 government-monitored air quality stations. The data originates from the Beijing Municipal Environmental Monitoring Center, with meteorological information at each station sourced from the closest weather station managed by the China Meteorological Administration. The observations span from March 1st, 2013, to February 28th, 2017, with any unavailable data marked as "NA."
 
 
-
-
 ## Problem statement/Business Proposition:
-The American Heart Association warns that exposure to fine particulate matter (PM2.5) can significantly increase the risk of cardiovascular diseases and mortality, especially with prolonged exposure. In response, as university students, we aim to develop a data-driven system, the Simple Reflex Agent with State (SRAS), to mitigate PM2.5 exposure indoors. This introduction outlines our approach to address this critical health concern.
+The American Heart Association warns that exposure to fine particulate matter (PM2.5) can significantly increase the risk of cardiovascular diseases and mortality, especially with prolonged exposure. In response, we aim to develop a data-driven system, a Simple Reflex Agent with State (SRAS), to mitigate PM2.5 exposure indoors. This leads us to the questions regarding this dataset.
 
+1. Can we predict the next time step's PM2.5?
+2. If the PM2.5 sensor is down, can we estimate current PM2.5?
 
 ## Feature Engineering Techniques
 ### Dealing with skew
@@ -55,7 +63,7 @@ The American Heart Association warns that exposure to fine particulate matter (P
 
 ## Contributors
 - Sushruth (EDA)
-- Khushi (Data Imputation, Video Editor)
+- Khushi (Data Imputation, Data Cleaning, Video Editor)
 - Maxwell (EDA, Data Imputation, Feature Engineering, Regression Modelling, Time Series Modelling, File Organizer, Package Developer, Product Designer)
 
 
@@ -88,3 +96,10 @@ https://textbooks.math.gatech.edu/ila/projections.html
 
 https://archive.ics.uci.edu/dataset/501/beijing+multi+site+air+quality+data
 
+https://builtin.com/data-science/step-step-explanation-principal-component-analysis
+
+https://statisticaloddsandends.wordpress.com/2021/02/19/the-box-cox-and-yeo-johnson-transformations-for-continuous-variables/
+
+https://medium.com/@kyawsawhtoon/log-transformation-purpose-and-interpretation-9444b4b049c9#:~:text=What%20is%20Log%20Transformation%3F,the%20purposes%20of%20statistical%20modeling.
+
+https://quantifyinghealth.com/square-root-transformation/
