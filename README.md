@@ -22,7 +22,7 @@ This is in an effort to reduce the size of the notebook to make it easier to fol
 2. <a href="./data_imputation.ipynb">Data Imputation</a>
 3. <a href="./EDA.ipynb">Exploratory Data Analysis</a>
 4. <a href="./feature_engineering.ipynb">Feature Engineering</a>
-5. <a href="./model_eval.ipynb">Model Evaluation</a>
+5. <a href="./model_eval.ipynb">Model Evaluation (Too large to view, please download to see)</a>
 6. <a href="./productdesign.md">Product Design</a>
 
 ## Dataset
