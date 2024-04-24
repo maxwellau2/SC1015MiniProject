@@ -68,7 +68,15 @@ Implemented using a Raspberry Pi for cost-effectiveness and ease of deployment, 
 - Khushi (Data Imputation, Data Cleaning, Video Editor)
 - Maxwell (EDA, Data Imputation, Feature Engineering, Regression Modelling, Time Series Modelling, File Organizer, Package Developer, Product Designer)
 
-
+## What did we learn?
+- Handling skewed data with transformations
+- Principal Component Analysis
+- Creative feature extraction (projection)
+- Plotly graphing
+- More machine learning models (Adaboost, Random Forest, Neural Network)
+- Time Series Forecasting (GRU, LSTM)
+- New metrics (MAPE)
+- Researching articles (most of the stuff we did were from looking through articles, and interpreting the implementation)
 
 ## References
 
