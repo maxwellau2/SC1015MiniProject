@@ -60,6 +60,8 @@ The American Heart Association warns that exposure to fine particulate matter (P
 
 ## Solution
 ### Create idea of how to implement models onto a Simple Reflex Agent with State.
+Our solution entails the development of a Simple Reflex Agent with State (SRAS) to tackle the health hazards linked to indoor exposure to fine particulate matter (PM2.5), drawing on insights from the American Heart Association's alerts.
+Implemented using a Raspberry Pi for cost-effectiveness and ease of deployment, our SRAS continually monitors environmental conditions via sensors and timers, utilizing predictive algorithms to anticipate future PM2.5 levels.
 
 ## Contributors
 - Sushruth (EDA)
