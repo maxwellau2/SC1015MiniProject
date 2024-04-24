@@ -24,8 +24,8 @@ This dataset contains hourly records of air pollutant levels from 12 government-
 
 
 
-## Problem statement:
-### Air Quality in 
+## Problem statement/Business Proposition:
+The American Heart Association warns that exposure to fine particulate matter (PM2.5) can significantly increase the risk of cardiovascular diseases and mortality, especially with prolonged exposure. In response, as university students, we aim to develop a data-driven system, the Simple Reflex Agent with State (SRAS), to mitigate PM2.5 exposure indoors. This introduction outlines our approach to address this critical health concern.
 
 
 ## Feature Engineering Techniques
@@ -53,7 +53,10 @@ This dataset contains hourly records of air pollutant levels from 12 government-
 ## Solution
 ### Create idea of how to implement models onto a Simple Reflex Agent with State.
 
-
+## Contributors
+- Sushruth (EDA)
+- Khushi (Data Imputation, Video Editor)
+- Maxwell (EDA, Data Imputation, Feature Engineering, Regression Modelling, Time Series Modelling, File Organizer, Package Developer, Product Designer)
 
 
 
