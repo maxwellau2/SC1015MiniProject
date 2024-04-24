@@ -64,9 +64,9 @@ Our solution entails the development of a Simple Reflex Agent with State (SRAS) 
 Implemented using a Raspberry Pi for cost-effectiveness and ease of deployment, our SRAS continually monitors environmental conditions via sensors and timers, utilizing predictive algorithms to anticipate future PM2.5 levels.
 
 ## Contributors
-- Sushruth (EDA)
-- Khushi (Data Imputation, Data Cleaning, Video Editor)
-- Maxwell (EDA, Data Imputation, Feature Engineering, Regression Modelling, Time Series Modelling, File Organizer, Package Developer, Product Designer)
+- **Muthukrishnan Sushruth** (EDA)
+- **Rana Khushi** (Data Imputation, Data Cleaning, Video Editor)
+- **Au Ze Hong, Maxwell** (EDA, Data Imputation, Feature Engineering, Regression Modelling, Time Series Modelling, File Organizer, Package Developer, Product Designer)
 
 ## What did we learn?
 - Handling skewed data with transformations
