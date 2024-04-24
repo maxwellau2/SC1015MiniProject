@@ -10,7 +10,7 @@ Below is a flowchart of the reccomended path to look at our project.
 
 In order to make the notebook easier to follow, we have
 1. **Abstracted data imputation** codes into a **<a href="./scripts/datacleaningutils.py">datacleaningutils.py</a>**
-2. **Abstracted data transformation** functions into **<a href="./scripts/datatransformations.py">datatrainformations.py</a>**
+2. **Abstracted data transformation** functions into **<a href="./scripts/datatransformations.py">datatransformations.py</a>**
 3. **Abstracted Regression Modelling Processes** into **<a href="./scripts/classical_models.py">classical_models.py</a>**
 4. **Abstracted Time Series Modelling Processes** into **<a href="./scripts/timeseries_trainer.py">timeseries_trainer.py</a>**
 5. Abstracted the cycle shown above (Data Preparation, Model Training, Model Evaluation) into a single notebook **showing only evalutation steps** (models will be trained seperately to reduce code redundancy in the notebook).
